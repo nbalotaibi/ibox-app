@@ -1,10 +1,8 @@
 package edu.csupomona.cs585.ibox.sync;
 
-import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.Arrays;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
@@ -19,8 +17,8 @@ import com.google.api.services.drive.DriveScopes;
 
 public class GoogleDriveServiceProvider {
 
-	private static String CLIENT_ID = "PASTE_YOUR_CLIENT_ID_HERE";
-	private static String CLIENT_SECRET = "PASTE_YOUR_CLIENT_SECRET_HERE";
+	private static String CLIENT_ID = "342028933683-p9lkls1ccg65idrt3sfbjm03pelosn37.apps.googleusercontent.com";
+	private static String CLIENT_SECRET = "SCYJyp_UcOIKZCPspUAxRYwM";
 
 	private static String REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob";
 
@@ -55,13 +53,7 @@ public class GoogleDriveServiceProvider {
 		String url = flow.newAuthorizationUrl().setRedirectUri(REDIRECT_URI).build();
 		System.out.println("Please open the following URL in your browser then type the authorization code:");
 		System.out.println("  " + url);
-		try {
-			Desktop.getDesktop().browse(new URL(url).toURI());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Enter Code Here: ");
 		String code = br.readLine();
 
 		GoogleTokenResponse response = flow.newTokenRequest(code).setRedirectUri(REDIRECT_URI).execute();
