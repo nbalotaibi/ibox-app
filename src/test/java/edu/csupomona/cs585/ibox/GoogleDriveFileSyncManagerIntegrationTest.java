@@ -29,13 +29,13 @@ import edu.csupomona.cs585.ibox.sync.GoogleDriveFileSyncManager;
 
 public class GoogleDriveFileSyncManagerIntegrationTest {
 	
-	private String filePath= "/Users/norahbijad/Documents/workspace/ibox-app-master-2/test.txt";
+	private String filePath= "/Users/norahbijad/Documents/workspace/ibox-app/test.txt";
 	private File localFile = new File(filePath);
 	private String fileName= "test.txt";
 	
 	Drive Service;
 	 static GoogleDriveFileSyncManager googledriveF ;
-	   private static final String PATH = "/Users/norahbijad/Documents/workspace/ibox-app-master/My Project-b916d6928bcb.p12";
+	   private static final String PATH = "/Users/norahbijad/Documents/workspace/ibox-app/My Project-b916d6928bcb.p12";
 	
 	   private void setup() throws IOException{
 		   GoogleDriveServicesIntegration();		
